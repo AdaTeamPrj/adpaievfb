@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "mentionsObligatoires": {
+      "home": {
+        "title": "Mentions Obligatoires",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Mentions Obligatoires erstellen",
+        "createOrEditLabel": "Mentions Obligatoires erstellen oder bearbeiten",
+        "notFound": "Keine Mentions Obligatoires gefunden"
+      },
+      "created": "Mentions Obligatoires erstellt mit ID {{ param }}",
+      "updated": "Mentions Obligatoires aktualisiert mit ID {{ param }}",
+      "deleted": "Mentions Obligatoires gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Mentions Obligatoires {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Mentions Obligatoires"
+      },
+      "id": "ID",
+      "mention": "Mention",
+      "description": "Description",
+      "ficheDePaie": "Fiche De Paie"
+    }
+  }
+}

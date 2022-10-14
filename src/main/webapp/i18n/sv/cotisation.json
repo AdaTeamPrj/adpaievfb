@@ -1,0 +1,34 @@
+{
+  "adpaievfbApp": {
+    "cotisation": {
+      "home": {
+        "title": "Cotisations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Cotisation",
+        "createOrEditLabel": "Skapa eller ändra en Cotisation",
+        "notFound": "No Cotisations found"
+      },
+      "created": "En ny Cotisation är skapad med id {{ param }}",
+      "updated": "En Cotisation är uppdaterad med id  {{ param }}",
+      "deleted": "En Cotisation är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Cotisation {{ id }}?"
+      },
+      "detail": {
+        "title": "Cotisation"
+      },
+      "id": "ID",
+      "name": "Name",
+      "famille": "Famille",
+      "taux": "Taux",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "actuel": "Actuel",
+      "multiplicateurMin": "Multiplicateur Min",
+      "multiplicateurMax": "Multiplicateur Max",
+      "baseTauxCotisation": "Base Taux Cotisation",
+      "ficheDePaie": "Fiche De Paie",
+      "typeContrat": "Type Contrat"
+    }
+  }
+}

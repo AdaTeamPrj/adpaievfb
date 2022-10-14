@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "typeContrat": {
+      "home": {
+        "title": "Type Contrats",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Type Contrat erstellen",
+        "createOrEditLabel": "Type Contrat erstellen oder bearbeiten",
+        "notFound": "Keine Type Contrats gefunden"
+      },
+      "created": "Type Contrat erstellt mit ID {{ param }}",
+      "updated": "Type Contrat aktualisiert mit ID {{ param }}",
+      "deleted": "Type Contrat gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Type Contrat {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Type Contrat"
+      },
+      "id": "ID",
+      "typeContrat": "Type Contrat",
+      "contrat": "Contrat",
+      "cotisation": "Cotisation"
+    }
+  }
+}

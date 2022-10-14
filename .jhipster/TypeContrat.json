@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20221014115148",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "type_contrat",
+  "fields": [
+    {
+      "fieldName": "typeContrat",
+      "fieldType": "TypeDeContrat",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Stage,Alternance,CDI,CDD"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TypeContrat",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "contrat",
+      "otherEntityRelationshipName": "typeContrat",
+      "relationshipName": "contrat",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cotisation",
+      "otherEntityRelationshipName": "typeContrat",
+      "ownerSide": true,
+      "relationshipName": "cotisation",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

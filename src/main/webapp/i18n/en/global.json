@@ -7,6 +7,21 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "location": "Location",
+        "heureSup": "Heure Sup",
+        "employee": "Employee",
+        "employeur": "Employeur",
+        "job": "Job",
+        "tauxDImposition": "Taux D Imposition",
+        "mentionsObligatoires": "Mentions Obligatoires",
+        "conge": "Conge",
+        "bonus": "Bonus",
+        "contrat": "Contrat",
+        "typeContrat": "Type Contrat",
+        "ficheDePaie": "Fiche De Paie",
+        "conventionCollective": "Convention Collective",
+        "cotisation": "Cotisation",
+        "baseTauxCotisation": "Base Taux Cotisation",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

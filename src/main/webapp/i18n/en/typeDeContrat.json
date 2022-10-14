@@ -1,0 +1,11 @@
+{
+  "adpaievfbApp": {
+    "TypeDeContrat": {
+      "null": "",
+      "Stage": "Stage",
+      "Alternance": "Alternance",
+      "CDI": "CDI",
+      "CDD": "CDD"
+    }
+  }
+}

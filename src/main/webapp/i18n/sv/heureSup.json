@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "heureSup": {
+      "home": {
+        "title": "Heure Sups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Heure Sup",
+        "createOrEditLabel": "Skapa eller ändra en Heure Sup",
+        "notFound": "No Heure Sups found"
+      },
+      "created": "En ny Heure Sup är skapad med id {{ param }}",
+      "updated": "En Heure Sup är uppdaterad med id  {{ param }}",
+      "deleted": "En Heure Sup är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Heure Sup {{ id }}?"
+      },
+      "detail": {
+        "title": "Heure Sup"
+      },
+      "id": "ID",
+      "date": "Date",
+      "nbHeure": "Nb Heure",
+      "employee": "Employee"
+    }
+  }
+}

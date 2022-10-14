@@ -1,0 +1,27 @@
+{
+  "adpaievfbApp": {
+    "bonus": {
+      "home": {
+        "title": "Bonuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Bonus",
+        "createOrEditLabel": "Skapa eller ändra en Bonus",
+        "notFound": "No Bonuses found"
+      },
+      "created": "En ny Bonus är skapad med id {{ param }}",
+      "updated": "En Bonus är uppdaterad med id  {{ param }}",
+      "deleted": "En Bonus är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Bonus {{ id }}?"
+      },
+      "detail": {
+        "title": "Bonus"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "montant": "Montant",
+      "bonusDate": "Bonus Date",
+      "contrat": "Contrat"
+    }
+  }
+}

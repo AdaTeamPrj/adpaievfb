@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20221014115150",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "convention_collective",
+  "fields": [
+    {
+      "fieldName": "idcc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "coefficient",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "valeurPoint",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "baseFixe",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "salaireMinimal",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ConventionCollective",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "employeur",
+      "otherEntityRelationshipName": "conventionCollective",
+      "ownerSide": false,
+      "relationshipName": "employeur",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "typeContrat": {
+      "home": {
+        "title": "Type Contrats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Type Contrat",
+        "createOrEditLabel": "Skapa eller ändra en Type Contrat",
+        "notFound": "No Type Contrats found"
+      },
+      "created": "En ny Type Contrat är skapad med id {{ param }}",
+      "updated": "En Type Contrat är uppdaterad med id  {{ param }}",
+      "deleted": "En Type Contrat är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Type Contrat {{ id }}?"
+      },
+      "detail": {
+        "title": "Type Contrat"
+      },
+      "id": "ID",
+      "typeContrat": "Type Contrat",
+      "contrat": "Contrat",
+      "cotisation": "Cotisation"
+    }
+  }
+}

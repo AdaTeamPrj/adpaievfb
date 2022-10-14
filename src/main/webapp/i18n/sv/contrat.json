@@ -1,0 +1,35 @@
+{
+  "adpaievfbApp": {
+    "contrat": {
+      "home": {
+        "title": "Contrats",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Contrat",
+        "createOrEditLabel": "Skapa eller ändra en Contrat",
+        "notFound": "No Contrats found"
+      },
+      "created": "En ny Contrat är skapad med id {{ param }}",
+      "updated": "En Contrat är uppdaterad med id  {{ param }}",
+      "deleted": "En Contrat är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Contrat {{ id }}?"
+      },
+      "detail": {
+        "title": "Contrat"
+      },
+      "id": "ID",
+      "salaireBase": "Salaire Base",
+      "emploi": "Emploi",
+      "dateArrive": "Date Arrive",
+      "classification": "Classification",
+      "typeForfait": "Type Forfait",
+      "nbHeure": "Nb Heure",
+      "typeJourTravail": "Type Jour Travail",
+      "dateDepart": "Date Depart",
+      "conventionCollective": "Convention Collective",
+      "employeur": "Employeur",
+      "employee": "Employee",
+      "typeContrat": "Type Contrat"
+    }
+  }
+}

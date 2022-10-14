@@ -1,0 +1,25 @@
+{
+  "adpaievfbApp": {
+    "baseTauxCotisation": {
+      "home": {
+        "title": "Base Taux Cotisations",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Base Taux Cotisation erstellen",
+        "createOrEditLabel": "Base Taux Cotisation erstellen oder bearbeiten",
+        "notFound": "Keine Base Taux Cotisations gefunden"
+      },
+      "created": "Base Taux Cotisation erstellt mit ID {{ param }}",
+      "updated": "Base Taux Cotisation aktualisiert mit ID {{ param }}",
+      "deleted": "Base Taux Cotisation gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Base Taux Cotisation {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Base Taux Cotisation"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "montant": "Montant"
+    }
+  }
+}

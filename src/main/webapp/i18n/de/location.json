@@ -1,0 +1,32 @@
+{
+  "adpaievfbApp": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Location erstellen",
+        "createOrEditLabel": "Location erstellen oder bearbeiten",
+        "notFound": "Keine Locations gefunden"
+      },
+      "created": "Location erstellt mit ID {{ param }}",
+      "updated": "Location aktualisiert mit ID {{ param }}",
+      "deleted": "Location gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Location {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "id": "ID",
+      "numeroRue": "Numero Rue",
+      "nomVoie": "Nom Voie",
+      "streetName": "Street Name",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "nomDepartement": "Nom Departement",
+      "nomRegion": "Nom Region",
+      "employee": "Employee",
+      "employeur": "Employeur"
+    }
+  }
+}

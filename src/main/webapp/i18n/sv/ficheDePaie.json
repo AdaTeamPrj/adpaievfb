@@ -1,0 +1,36 @@
+{
+  "adpaievfbApp": {
+    "ficheDePaie": {
+      "home": {
+        "title": "Fiche De Paies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Fiche De Paie",
+        "createOrEditLabel": "Skapa eller ändra en Fiche De Paie",
+        "notFound": "No Fiche De Paies found"
+      },
+      "created": "En ny Fiche De Paie är skapad med id {{ param }}",
+      "updated": "En Fiche De Paie är uppdaterad med id  {{ param }}",
+      "deleted": "En Fiche De Paie är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Fiche De Paie {{ id }}?"
+      },
+      "detail": {
+        "title": "Fiche De Paie"
+      },
+      "id": "ID",
+      "salaireBrut": "Salaire Brut",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "datePaiement": "Date Paiement",
+      "salaireNet": "Salaire Net",
+      "montantNetAvantImpots": "Montant Net Avant Impots",
+      "proFees": "Pro Fees",
+      "deductions": "Deductions",
+      "contrat": "Contrat",
+      "employeur": "Employeur",
+      "imposition": "Imposition",
+      "cotisation": "Cotisation",
+      "mentionsObligatoires": "Mentions Obligatoires"
+    }
+  }
+}

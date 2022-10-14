@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20221014115152",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "base_taux_cotisation",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "montant",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "BaseTauxCotisation",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

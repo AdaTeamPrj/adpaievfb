@@ -1,0 +1,33 @@
+{
+  "adpaievfbApp": {
+    "conge": {
+      "home": {
+        "title": "Conges",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Conge",
+        "createOrEditLabel": "Skapa eller ändra en Conge",
+        "notFound": "No Conges found"
+      },
+      "created": "En ny Conge är skapad med id {{ param }}",
+      "updated": "En Conge är uppdaterad med id  {{ param }}",
+      "deleted": "En Conge är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Conge {{ id }}?"
+      },
+      "detail": {
+        "title": "Conge"
+      },
+      "id": "ID",
+      "holdateStart": "Holdate Start",
+      "holdateEnd": "Holdate End",
+      "nbCongeAcquis": "Nb Conge Acquis",
+      "nbCongePris": "Nb Conge Pris",
+      "dateDemande": "Date Demande",
+      "decision": "Decision",
+      "dateReponse": "Date Reponse",
+      "typeConge": "Type Conge",
+      "congePay": "Conge Pay",
+      "contrat": "Contrat"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "adpaievfbApp": {
+    "employeur": {
+      "home": {
+        "title": "Employeurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Employeur",
+        "createOrEditLabel": "Skapa eller ändra en Employeur",
+        "notFound": "No Employeurs found"
+      },
+      "created": "En ny Employeur är skapad med id {{ param }}",
+      "updated": "En Employeur är uppdaterad med id  {{ param }}",
+      "deleted": "En Employeur är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Employeur {{ id }}?"
+      },
+      "detail": {
+        "title": "Employeur"
+      },
+      "id": "ID",
+      "name": "Name",
+      "numeroSiret": "Numero Siret",
+      "numApe": "Num Ape",
+      "numUrssaf": "Num Urssaf",
+      "conventionCollective": "Convention Collective",
+      "location": "Location"
+    }
+  }
+}

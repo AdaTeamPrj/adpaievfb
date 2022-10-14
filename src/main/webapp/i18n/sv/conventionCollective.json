@@ -1,0 +1,31 @@
+{
+  "adpaievfbApp": {
+    "conventionCollective": {
+      "home": {
+        "title": "Convention Collectives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Convention Collective",
+        "createOrEditLabel": "Skapa eller ändra en Convention Collective",
+        "notFound": "No Convention Collectives found"
+      },
+      "created": "En ny Convention Collective är skapad med id {{ param }}",
+      "updated": "En Convention Collective är uppdaterad med id  {{ param }}",
+      "deleted": "En Convention Collective är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Convention Collective {{ id }}?"
+      },
+      "detail": {
+        "title": "Convention Collective"
+      },
+      "id": "ID",
+      "idcc": "Idcc",
+      "nom": "Nom",
+      "position": "Position",
+      "coefficient": "Coefficient",
+      "valeurPoint": "Valeur Point",
+      "baseFixe": "Base Fixe",
+      "salaireMinimal": "Salaire Minimal",
+      "employeur": "Employeur"
+    }
+  }
+}

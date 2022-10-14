@@ -1,0 +1,32 @@
+{
+  "adpaievfbApp": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Location",
+        "createOrEditLabel": "Créer ou éditer un Location",
+        "notFound": "Aucun Location trouvé"
+      },
+      "created": "Un nouveau Location a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Location avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Location avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Location {{ id }} ?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "id": "ID",
+      "numeroRue": "Numero Rue",
+      "nomVoie": "Nom Voie",
+      "streetName": "Street Name",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "nomDepartement": "Nom Departement",
+      "nomRegion": "Nom Region",
+      "employee": "Employee",
+      "employeur": "Employeur"
+    }
+  }
+}

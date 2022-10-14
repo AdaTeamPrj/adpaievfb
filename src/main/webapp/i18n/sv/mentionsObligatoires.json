@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "mentionsObligatoires": {
+      "home": {
+        "title": "Mentions Obligatoires",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Mentions Obligatoires",
+        "createOrEditLabel": "Skapa eller ändra en Mentions Obligatoires",
+        "notFound": "No Mentions Obligatoires found"
+      },
+      "created": "En ny Mentions Obligatoires är skapad med id {{ param }}",
+      "updated": "En Mentions Obligatoires är uppdaterad med id  {{ param }}",
+      "deleted": "En Mentions Obligatoires är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Mentions Obligatoires {{ id }}?"
+      },
+      "detail": {
+        "title": "Mentions Obligatoires"
+      },
+      "id": "ID",
+      "mention": "Mention",
+      "description": "Description",
+      "ficheDePaie": "Fiche De Paie"
+    }
+  }
+}

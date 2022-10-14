@@ -17,7 +17,32 @@
     <property name="datetimeType" value="datetime" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115138_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115139_added_entity_HeureSup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115140_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115141_added_entity_Employeur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115142_added_entity_Job.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115143_added_entity_TauxDImposition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115144_added_entity_MentionsObligatoires.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115145_added_entity_Conge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115146_added_entity_Bonus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115147_added_entity_Contrat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115148_added_entity_TypeContrat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115149_added_entity_FicheDePaie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115150_added_entity_ConventionCollective.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115151_added_entity_Cotisation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115152_added_entity_BaseTauxCotisation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20221014115138_added_entity_constraints_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115139_added_entity_constraints_HeureSup.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115140_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115141_added_entity_constraints_Employeur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115145_added_entity_constraints_Conge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115146_added_entity_constraints_Bonus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115147_added_entity_constraints_Contrat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115148_added_entity_constraints_TypeContrat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115149_added_entity_constraints_FicheDePaie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20221014115151_added_entity_constraints_Cotisation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

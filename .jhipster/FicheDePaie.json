@@ -1,0 +1,78 @@
+{
+  "applications": "*",
+  "changelogDate": "20221014115149",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "fiche_de_paie",
+  "fields": [
+    {
+      "fieldName": "salaireBrut",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datePaiement",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "salaireNet",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "montantNetAvantImpots",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "proFees",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "deductions",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "FicheDePaie",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "contrat",
+      "relationshipName": "contrat",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "employeur",
+      "relationshipName": "employeur",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tauxDImposition",
+      "relationshipName": "imposition",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cotisation",
+      "otherEntityRelationshipName": "ficheDePaie",
+      "ownerSide": true,
+      "relationshipName": "cotisation",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "mentionsObligatoires",
+      "otherEntityRelationshipName": "ficheDePaie",
+      "ownerSide": true,
+      "relationshipName": "mentionsObligatoires",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

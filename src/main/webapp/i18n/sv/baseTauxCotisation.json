@@ -1,0 +1,25 @@
+{
+  "adpaievfbApp": {
+    "baseTauxCotisation": {
+      "home": {
+        "title": "Base Taux Cotisations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Base Taux Cotisation",
+        "createOrEditLabel": "Skapa eller ändra en Base Taux Cotisation",
+        "notFound": "No Base Taux Cotisations found"
+      },
+      "created": "En ny Base Taux Cotisation är skapad med id {{ param }}",
+      "updated": "En Base Taux Cotisation är uppdaterad med id  {{ param }}",
+      "deleted": "En Base Taux Cotisation är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Base Taux Cotisation {{ id }}?"
+      },
+      "detail": {
+        "title": "Base Taux Cotisation"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "montant": "Montant"
+    }
+  }
+}

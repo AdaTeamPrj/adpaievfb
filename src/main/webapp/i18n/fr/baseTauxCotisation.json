@@ -1,0 +1,25 @@
+{
+  "adpaievfbApp": {
+    "baseTauxCotisation": {
+      "home": {
+        "title": "BaseTauxCotisations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Base Taux Cotisation",
+        "createOrEditLabel": "Créer ou éditer un Base Taux Cotisation",
+        "notFound": "Aucun Base Taux Cotisation trouvé"
+      },
+      "created": "Un nouveau Base Taux Cotisation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Base Taux Cotisation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Base Taux Cotisation avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Base Taux Cotisation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Base Taux Cotisation"
+      },
+      "id": "ID",
+      "nom": "Nom",
+      "montant": "Montant"
+    }
+  }
+}

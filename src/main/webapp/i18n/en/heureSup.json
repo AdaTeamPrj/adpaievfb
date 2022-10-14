@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "heureSup": {
+      "home": {
+        "title": "Heure Sups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Heure Sup",
+        "createOrEditLabel": "Create or edit a Heure Sup",
+        "notFound": "No Heure Sups found"
+      },
+      "created": "A new Heure Sup is created with identifier {{ param }}",
+      "updated": "A Heure Sup is updated with identifier {{ param }}",
+      "deleted": "A Heure Sup is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Heure Sup {{ id }}?"
+      },
+      "detail": {
+        "title": "Heure Sup"
+      },
+      "id": "ID",
+      "date": "Date",
+      "nbHeure": "Nb Heure",
+      "employee": "Employee"
+    }
+  }
+}

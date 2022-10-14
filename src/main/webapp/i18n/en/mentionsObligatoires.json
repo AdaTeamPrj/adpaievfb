@@ -1,0 +1,26 @@
+{
+  "adpaievfbApp": {
+    "mentionsObligatoires": {
+      "home": {
+        "title": "Mentions Obligatoires",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Mentions Obligatoires",
+        "createOrEditLabel": "Create or edit a Mentions Obligatoires",
+        "notFound": "No Mentions Obligatoires found"
+      },
+      "created": "A new Mentions Obligatoires is created with identifier {{ param }}",
+      "updated": "A Mentions Obligatoires is updated with identifier {{ param }}",
+      "deleted": "A Mentions Obligatoires is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mentions Obligatoires {{ id }}?"
+      },
+      "detail": {
+        "title": "Mentions Obligatoires"
+      },
+      "id": "ID",
+      "mention": "Mention",
+      "description": "Description",
+      "ficheDePaie": "Fiche De Paie"
+    }
+  }
+}
