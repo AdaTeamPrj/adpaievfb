@@ -153,4 +153,9 @@ public class TauxDImposition implements Serializable {
             ", endDate='" + getEndDate() + "'" +
             "}";
     }
+
+    public float calculs_imposition(TauxDImposition imposition, float salaire_net) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 }
