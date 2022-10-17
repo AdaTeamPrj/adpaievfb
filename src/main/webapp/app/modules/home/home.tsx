@@ -39,34 +39,31 @@ export const Home = () => {
 
         <div className="wrapper">
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="/fiche-de-paie" title="Fiche de paie">
               <br />
               <div className="item">Gestion de paie</div>
             </a>
           </ul>
-
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="/base-taux-cotisation" title="Déclaration sociales">
               <br />
               <div className="item">Declarations sociales</div>
             </a>
           </ul>
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="/contrat" title="Embauches">
               <br />
               <div className="item">Gestion embauches</div>
             </a>
           </ul>
-
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="/conge" title="Congés">
               <br />
-              <div className="item">Gestion des temps</div>
+              <div className="item">Gestion des congés</div>
             </a>
           </ul>
-
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="#" title="Tableaux de bord">
               <br />
               <div className="item">Tableaux de bord</div>
             </a>
