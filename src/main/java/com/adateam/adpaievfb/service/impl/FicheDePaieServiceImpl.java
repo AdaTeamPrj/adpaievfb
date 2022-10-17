@@ -2,14 +2,15 @@ package com.adateam.adpaievfb.service.impl;
 
 import com.adateam.adpaievfb.domain.Conge;
 import com.adateam.adpaievfb.domain.Contrat;
+
 import com.adateam.adpaievfb.domain.Cotisation;
 import com.adateam.adpaievfb.domain.Employee;
 import com.adateam.adpaievfb.domain.FicheDePaie;
 import com.adateam.adpaievfb.domain.TauxDImposition;
 import com.adateam.adpaievfb.domain.enumeration.Decision;
+import com.adateam.adpaievfb.domain.enumeration.TypeJourTravail;
 import com.adateam.adpaievfb.repository.CongeRepository;
 import com.adateam.adpaievfb.repository.ContratRepository;
-import com.adateam.adpaievfb.repository.CotisationRepository;
 import com.adateam.adpaievfb.repository.FicheDePaieRepository;
 import com.adateam.adpaievfb.repository.TauxDImpositionRepository;
 import com.adateam.adpaievfb.service.FicheDePaieService;
@@ -31,13 +32,19 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class FicheDePaieServiceImpl implements FicheDePaieService {
 
+    private static final TypeJourTravail Ouvre = null;
+
+    private static final TypeJourTravail Ouvrable = null;
+
     private final Logger log = LoggerFactory.getLogger(FicheDePaieServiceImpl.class);
 
     private final FicheDePaieRepository ficheDePaieRepository;
     private final TauxDImpositionRepository tauxDImpositionRepository;
     private final ContratRepository contratRepository;
     private final CongeRepository congeRepository;
+
     private final CotisationRepository cotisationRepository;
+
 
     public FicheDePaieServiceImpl(
         FicheDePaieRepository ficheDePaieRepository,
@@ -56,7 +63,8 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     @Override
     public FicheDePaie save(FicheDePaie ficheDePaie) {
         log.debug("Request to save FicheDePaie : {}", ficheDePaie);
-        ficheDePaie.setSalaireBrut(getSalaireBase(ficheDePaie.getContrat().getEmployee())); //modifier set to salaire brut quan on aura la fonction
+        ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
+        ficheDePaie.setSalaireBrut(getSalaireBase(ficheDePaie.getContrat().getEmployee())+ calculConge(ficheDePaie)); //modifier set to salaire brut quan on aura la fonction
         ficheDePaie.setMontantNetAvantImpots(getMontantNetAvantImpots(ficheDePaie.getSalaireBrut()));
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
         ficheDePaie.setEmployeur(ficheDePaie.getContrat().getEmployeur());
@@ -180,7 +188,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         //chercher le salaire de base dans la table contrat
         List<Conge> listeConge = congeRepository.findAll();
         int i = 0;
-        Float nb_days = 0f;
+        float nb_days = 0f;
         while (i < listeConge.size()) {
             Boolean testdate =
                 listeConge.get(i).getHoldateStart().isBefore(ficheDePaie.getEndDate()) &&
@@ -208,6 +216,27 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
             i++;
         }
         return nb_days;
+    }
+
+
+    public float calculConge(FicheDePaie ficheDePaie) {
+        Employee employee = ficheDePaie.getContrat().getEmployee();
+        float salaireBase = getSalaireBase(employee);
+        TypeJourTravail typeJourTravail = ficheDePaie.getContrat().getTypeJourTravail();
+        float nb_days = getnbDaysConge(ficheDePaie, employee);
+        float conge_pay = -1f;
+
+        if (typeJourTravail == TypeJourTravail.Ouvre) {
+            conge_pay = (salaireBase * nb_days) / 22;
+            return (conge_pay);
+        }
+
+        if (typeJourTravail == TypeJourTravail.Ouvrable) {
+            conge_pay = (salaireBase * nb_days) / 26;
+            return (conge_pay);
+        } else {
+            return (conge_pay);
+        }
     }
 
     public Float calculSalaireNet(FicheDePaie ficheDePaie) {
