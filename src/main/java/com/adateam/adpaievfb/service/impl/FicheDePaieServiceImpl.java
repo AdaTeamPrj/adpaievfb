@@ -2,7 +2,6 @@ package com.adateam.adpaievfb.service.impl;
 
 import com.adateam.adpaievfb.domain.Conge;
 import com.adateam.adpaievfb.domain.Contrat;
-
 import com.adateam.adpaievfb.domain.Cotisation;
 import com.adateam.adpaievfb.domain.Employee;
 import com.adateam.adpaievfb.domain.FicheDePaie;
@@ -11,6 +10,7 @@ import com.adateam.adpaievfb.domain.enumeration.Decision;
 import com.adateam.adpaievfb.domain.enumeration.TypeJourTravail;
 import com.adateam.adpaievfb.repository.CongeRepository;
 import com.adateam.adpaievfb.repository.ContratRepository;
+import com.adateam.adpaievfb.repository.CotisationRepository;
 import com.adateam.adpaievfb.repository.FicheDePaieRepository;
 import com.adateam.adpaievfb.repository.TauxDImpositionRepository;
 import com.adateam.adpaievfb.service.FicheDePaieService;
@@ -45,7 +45,6 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
 
     private final CotisationRepository cotisationRepository;
 
-
     public FicheDePaieServiceImpl(
         FicheDePaieRepository ficheDePaieRepository,
         TauxDImpositionRepository tauxDImpositionRepository,
@@ -64,7 +63,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     public FicheDePaie save(FicheDePaie ficheDePaie) {
         log.debug("Request to save FicheDePaie : {}", ficheDePaie);
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
-        ficheDePaie.setSalaireBrut(getSalaireBase(ficheDePaie.getContrat().getEmployee())+ calculConge(ficheDePaie)); //modifier set to salaire brut quan on aura la fonction
+        ficheDePaie.setSalaireBrut(getSalaireBase(ficheDePaie.getContrat().getEmployee()) + calculConge(ficheDePaie)); //modifier set to salaire brut quan on aura la fonction
         ficheDePaie.setMontantNetAvantImpots(getMontantNetAvantImpots(ficheDePaie.getSalaireBrut()));
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
         ficheDePaie.setEmployeur(ficheDePaie.getContrat().getEmployeur());
@@ -217,7 +216,6 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         }
         return nb_days;
     }
-
 
     public float calculConge(FicheDePaie ficheDePaie) {
         Employee employee = ficheDePaie.getContrat().getEmployee();
