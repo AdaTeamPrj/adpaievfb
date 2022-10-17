@@ -3,8 +3,63 @@ Main page styles
 ========================================================================== */
 .hipster {
   display: inline-block;
-  width: 100%;
+  width: 80%;
   height: 497px;
-  background: url('../../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+  background: url('../../../content/images/imageaccueil.jpg') no-repeat center top;
   background-size: contain;
+  min-height: 100vh;
+  display: flex; /*body est le parent qui va gérer la répartition des enfants verticalement*/
+  flex-direction: column; /*par défaut c'est en ligne (row)*/
+}
+
+.carreMod {
+  /* Mieux vaut centrer le texte dans un
+     cercle. */
+  text-align: center;
+
+  /* On fait attention à ce que le texte
+     ne touche pas la bordure. On placera
+     donc le texte avec un remplissage, ce
+     qui donnera une meilleure impression
+     pour le cercle. */
+  padding: 1em;
+
+  /* La bordure marquera le cercle. On
+     pourrait également utiliser un arrière-
+     plan car celui-ci aurait été contenu
+     par border-radius */
+  border: 0.5em solid rgb(255, 128, 128);
+
+  /* Assurons-nous que la boîte soit carrée
+     pour obtenir un cercle bien rond plutôt
+     qu'une ellipse ;) */
+  width: 20em;
+  height: 20em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+}
+.box1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+.box2 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  background-color: lightblue;
+  border: 1px solid black;
+}
+.box3,
+.box4,
+.box5 {
+  background-color: lightblue;
+  border: 1px solid black;
 }
