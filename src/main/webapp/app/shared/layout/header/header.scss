@@ -1,18 +1,40 @@
-$header-color: #fff;
-$header-color-secondary: #bbb;
-$header-color-hover: darken($header-color, 20%);
+$header-color: #fff; // Couleur du tire Adpaie
+$header-color-secondary: #bbb; // Couleur titre secondaire
+$header-color-hover: darken($header-color, 30%); // Assombrir texte passage souris
+
+header {
+  background-color: red;
+  height: 100px;
+}
+
+.topnav a {
+  float: left;
+  color: #f8f8f8;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+
+.topnav a:hover {
+  background-color: black;
+}
+
+#topnav-right {
+  float: right;
+}
 
 /* ==========================================================================
 Developement Ribbon
 ========================================================================== */
 .ribbon {
   background-color: rgba(170, 0, 0, 0.5);
-  left: -3.5em;
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  right: -3.5em;
+
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
   overflow: hidden;
   position: absolute;
   top: 30px;
@@ -32,6 +54,10 @@ Developement Ribbon
     text-shadow: 0 0 5px #444;
     pointer-events: none;
   }
+}
+
+.app-header {
+  background-color: #ca5656;
 }
 
 /* ==========================================================================
@@ -77,7 +103,7 @@ Navbar styles
 
 .loading-bar {
   height: 3px;
-  background-color: #009cd8;
+  background-color: rgb(128, 255, 128);
   position: absolute;
   top: 0px;
   z-index: 1031;
