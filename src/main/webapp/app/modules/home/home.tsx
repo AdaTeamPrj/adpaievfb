@@ -39,7 +39,7 @@ export const Home = () => {
 
         <div className="wrapper">
           <ul className="body-link">
-            <a href="#" title="Accueil">
+            <a href="/fiche-de-paie" title="Accueil">
               <br />
               <div className="item">Gestion de paie</div>
             </a>
