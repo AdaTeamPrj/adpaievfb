@@ -38,11 +38,39 @@ export const Home = () => {
         )}
 
         <div className="wrapper">
-          <div className="item">Gestion de paie</div>
-          <div className="item">Declarations sociales</div>
-          <div className="item">Gestion embauches</div>
-          <div className="item">Gestion des temps</div>
-          <div className="item">Tableaux de bord</div>
+          <ul className="body-link">
+            <a href="#" title="Accueil">
+              <br />
+              <div className="item">Gestion de paie</div>
+            </a>
+          </ul>
+
+          <ul className="body-link">
+            <a href="#" title="Accueil">
+              <br />
+              <div className="item">Declarations sociales</div>
+            </a>
+          </ul>
+          <ul className="body-link">
+            <a href="#" title="Accueil">
+              <br />
+              <div className="item">Gestion embauches</div>
+            </a>
+          </ul>
+
+          <ul className="body-link">
+            <a href="#" title="Accueil">
+              <br />
+              <div className="item">Gestion des temps</div>
+            </a>
+          </ul>
+
+          <ul className="body-link">
+            <a href="#" title="Accueil">
+              <br />
+              <div className="item">Tableaux de bord</div>
+            </a>
+          </ul>
         </div>
       </Col>
     </Row>
