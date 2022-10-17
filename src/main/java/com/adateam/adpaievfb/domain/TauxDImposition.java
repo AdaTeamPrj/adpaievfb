@@ -1,5 +1,6 @@
 package com.adateam.adpaievfb.domain;
 
+import com.adateam.adpaievfb.domain.TauxDImposition;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.*;
@@ -141,6 +142,15 @@ public class TauxDImposition implements Serializable {
         return getClass().hashCode();
     }
 
+    public float calculs_imposition(TauxDImposition imposition, float salaire_net_avant_impots) {
+        /* if (salaire_net_avant_impots <= imposition.getMinSalary() || salaire_net_avant_impots > imposition.getMaxSalary()) {
+             return (0f);
+         }*/
+        //float part_salaire_imposable=min(salaire_maximum, salaire_net_avant_impots)-salaire_minimum;
+
+        return (salaire_net_avant_impots * imposition.getTaux() / 100);
+    }
+
     // prettier-ignore
     @Override
     public String toString() {
@@ -152,10 +162,5 @@ public class TauxDImposition implements Serializable {
             ", startDate='" + getStartDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
             "}";
-    }
-
-    public float calculs_imposition(TauxDImposition imposition, float salaire_net) {
-        // TODO Auto-generated method stub
-        return 0;
     }
 }
