@@ -4,12 +4,15 @@ import com.adateam.adpaievfb.domain.Conge;
 import com.adateam.adpaievfb.domain.Contrat;
 import com.adateam.adpaievfb.domain.Employee;
 import com.adateam.adpaievfb.domain.FicheDePaie;
+import com.adateam.adpaievfb.domain.HeureSup;
 import com.adateam.adpaievfb.domain.TauxDImposition;
 import com.adateam.adpaievfb.domain.enumeration.Decision;
+import com.adateam.adpaievfb.domain.enumeration.TypeConge;
 import com.adateam.adpaievfb.domain.enumeration.TypeJourTravail;
 import com.adateam.adpaievfb.repository.CongeRepository;
 import com.adateam.adpaievfb.repository.ContratRepository;
 import com.adateam.adpaievfb.repository.FicheDePaieRepository;
+import com.adateam.adpaievfb.repository.HeureSupRepository;
 import com.adateam.adpaievfb.repository.TauxDImpositionRepository;
 import com.adateam.adpaievfb.service.FicheDePaieService;
 import java.time.temporal.ChronoUnit;
@@ -28,10 +31,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class FicheDePaieServiceImpl implements FicheDePaieService {
-
-    private static final TypeJourTravail Ouvre = null;
-
-    private static final TypeJourTravail Ouvrable = null;
 
     private final Logger log = LoggerFactory.getLogger(FicheDePaieServiceImpl.class);
 
@@ -58,7 +57,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
         Employee employee = ficheDePaie.getContrat().getEmployee();
         //float salaire_net = getSalaireBase(employee);
-        ficheDePaie.setSalaireBrut(getSalaireBase(employee));
+        ficheDePaie.setSalaireBrut(getSalaireBase(employee) + calculConge(ficheDePaie));
         return ficheDePaieRepository.save(ficheDePaie);
     }
 
@@ -160,7 +159,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         return res;
     }
 
-    public float getnbDaysConge(FicheDePaie ficheDePaie, Employee employee) {
+    public float getnbDaysConge(FicheDePaie ficheDePaie, Employee employee, TypeConge typeConge) {
         //chercher le salaire de base dans la table contrat
         List<Conge> listeConge = congeRepository.findAll();
         int i = 0;
@@ -172,10 +171,11 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
             if (
                 listeConge.get(i).getContrat().getEmployee().getId() == employee.getId() &&
                 listeConge.get(i).getDecision() == Decision.Accepte &&
-                testdate
+                testdate &&
+                listeConge.get(i).getTypeConge() == typeConge
             ) {
                 //nb_days+=listeConge.get(i).getHoldateEnd(). listeConge.get(i).getHoldateStart();
-                nb_days += ChronoUnit.DAYS.between(listeConge.get(i).getHoldateEnd(), listeConge.get(i).getHoldateStart());
+                nb_days += ChronoUnit.DAYS.between(listeConge.get(i).getHoldateStart(), listeConge.get(i).getHoldateEnd());
             }
             i++;
         }
@@ -186,8 +186,11 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         Employee employee = ficheDePaie.getContrat().getEmployee();
         float salaireBase = getSalaireBase(employee);
         TypeJourTravail typeJourTravail = ficheDePaie.getContrat().getTypeJourTravail();
-        float nb_days = getnbDaysConge(ficheDePaie, employee);
-        float conge_pay = -1f;
+        float nb_days = getnbDaysConge(ficheDePaie, employee, TypeConge.CongePaye);
+        nb_days += getnbDaysConge(ficheDePaie, employee, TypeConge.RTT);
+        ficheDePaie.setDeductions(nb_days);
+        ficheDePaie.setProFees(salaireBase);
+        float conge_pay = 0f;
 
         if (typeJourTravail == TypeJourTravail.Ouvre) {
             conge_pay = (salaireBase * nb_days) / 22;
@@ -205,8 +208,6 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     public float calculSalaireNet(FicheDePaie ficheDePaie) {
         Employee employee = ficheDePaie.getContrat().getEmployee();
         float salaire_net = getSalaireBase(employee);
-        float conge_pay = calculConge(ficheDePaie);
-        ficheDePaie.setMontantNetAvantImpots(conge_pay);
         //To do transform Salarie de base en salaire brut, set salaire brut
         //To do calcul cotisation
         //To do seek the correct tauxImmposition
