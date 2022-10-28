@@ -13,6 +13,7 @@ import ficheDePaie from 'app/entities/fiche-de-paie/fiche-de-paie.reducer';
 import conventionCollective from 'app/entities/convention-collective/convention-collective.reducer';
 import cotisation from 'app/entities/cotisation/cotisation.reducer';
 import baseTauxCotisation from 'app/entities/base-taux-cotisation/base-taux-cotisation.reducer';
+import indicateurs from 'app/entities/indicateurs/indicateurs.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const entitiesReducers = {
@@ -31,6 +32,7 @@ const entitiesReducers = {
   conventionCollective,
   cotisation,
   baseTauxCotisation,
+  indicateurs,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
 };
 

@@ -21,16 +21,22 @@ class Footer extends React.Component {
                 </div>
               </div>
               <div className="col-md-2">
-                <h4>Lien</h4>
+                <h4>Liens</h4>
                 <ul className="footer-link">
                   <li>
                     <a href="#" title="Accueil">
                       Accueil
                       <br />
+                    </a>
+                    <a href="/fiche-de-paie" title="Fiche de paie">
                       Gestion fiches de paie
                       <br />
+                    </a>
+                    <a href="/base-taux-cotisation" title="Fiche de paie">
                       Déclarations sociales
                       <br />
+                    </a>
+                    <a href="/contrat" title="Fiche de paie">
                       Gestion des embauches
                       <br />
                     </a>

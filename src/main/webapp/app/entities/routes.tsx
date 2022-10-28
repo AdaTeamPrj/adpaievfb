@@ -18,6 +18,7 @@ import FicheDePaie from './fiche-de-paie';
 import ConventionCollective from './convention-collective';
 import Cotisation from './cotisation';
 import BaseTauxCotisation from './base-taux-cotisation';
+import Indicateurs from './indicateurs';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 export default () => {
@@ -40,6 +41,7 @@ export default () => {
         <Route path="convention-collective/*" element={<ConventionCollective />} />
         <Route path="cotisation/*" element={<Cotisation />} />
         <Route path="base-taux-cotisation/*" element={<BaseTauxCotisation />} />
+        <Route path="indicateurs/*" element={<Indicateurs />} />
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
       </ErrorBoundaryRoutes>
     </div>

@@ -63,7 +63,7 @@ export const Home = () => {
             </a>
           </ul>
           <ul className="body-link">
-            <a href="#" title="Tableaux de bord">
+            <a href="/indicateurs" title="Tableaux de bord">
               <br />
               <div className="item">Tableaux de bord</div>
             </a>
