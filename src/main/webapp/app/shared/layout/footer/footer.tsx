@@ -24,10 +24,9 @@ class Footer extends React.Component {
                 <h4>Liens</h4>
                 <ul className="footer-link">
                   <li>
+                    <br />
+                    <div className="item">Accueil</div>
 
-                      <br />
-                      <div className="item">Accueil</div>
-                    </a>
                     <a href="/fiche-de-paie" title="Fiche de paie">
                       <div className="item">Gestion de paie</div>
                     </a>
