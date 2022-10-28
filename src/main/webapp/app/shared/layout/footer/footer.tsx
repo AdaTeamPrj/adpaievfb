@@ -24,7 +24,7 @@ class Footer extends React.Component {
                 <h4>Liens</h4>
                 <ul className="footer-link">
                   <li>
-                    <a href="/" title="Accueil">
+
                       <br />
                       <div className="item">Accueil</div>
                     </a>

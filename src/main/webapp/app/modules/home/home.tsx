@@ -45,6 +45,7 @@ export const Home = () => {
               ></img>
             </div>
           </div>
+
         </div>
       </section>
 

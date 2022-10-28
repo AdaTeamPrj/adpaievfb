@@ -34,7 +34,8 @@
       "FicheDePaie",
       "ConventionCollective",
       "Cotisation",
-      "BaseTauxCotisation"
+      "BaseTauxCotisation",
+      "Indicateurs"
     ],
     "entitySuffix": "",
     "herokuAppName": "adpaievfb",
@@ -44,7 +45,7 @@
     "jhipsterVersion": "7.9.3",
     "jwtSecretKey": "ZDVmMjFlNzhiY2M5Nzk3ZjZhNGQ5MThkOTE5ZmJkNTA1MWFiNGQwMGNiNGFiMWY1NWNlOWM1Zjg4N2E2M2JkOTNhMmE0NjcxMWUzOTAwNDdhNmQ5MmM5YzJhNTg1ZWZhZWM0MDk4MWVkY2FiNjhkYTViMjQ0NzEwMjgzYzRhYWU=",
     "languages": ["fr", "en", "de", "sv"],
-    "lastLiquibaseTimestamp": 1665748312000,
+    "lastLiquibaseTimestamp": 1666957244000,
     "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],

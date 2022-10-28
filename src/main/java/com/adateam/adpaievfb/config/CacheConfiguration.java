@@ -78,6 +78,7 @@ public class CacheConfiguration {
             createCache(cm, com.adateam.adpaievfb.domain.Cotisation.class.getName() + ".ficheDePaies");
             createCache(cm, com.adateam.adpaievfb.domain.Cotisation.class.getName() + ".typeContrats");
             createCache(cm, com.adateam.adpaievfb.domain.BaseTauxCotisation.class.getName());
+            createCache(cm, com.adateam.adpaievfb.domain.Indicateurs.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

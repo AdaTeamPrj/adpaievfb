@@ -1,10 +1,8 @@
 package com.adateam.adpaievfb.service.impl;
 
-import com.adateam.adpaievfb.domain.Conge;
-import com.adateam.adpaievfb.domain.Contrat;
-import com.adateam.adpaievfb.domain.Cotisation;
-import com.adateam.adpaievfb.domain.Employee;
 import com.adateam.adpaievfb.domain.FicheDePaie;
+
+import com.adateam.adpaievfb.repository.FicheDePaieRepository;
 import com.adateam.adpaievfb.domain.HeureSup;
 import com.adateam.adpaievfb.domain.HeureSup;
 import com.adateam.adpaievfb.domain.TauxDImposition;
@@ -18,9 +16,8 @@ import com.adateam.adpaievfb.repository.FicheDePaieRepository;
 import com.adateam.adpaievfb.repository.HeureSupRepository;
 import com.adateam.adpaievfb.repository.HeureSupRepository;
 import com.adateam.adpaievfb.repository.TauxDImpositionRepository;
+
 import com.adateam.adpaievfb.service.FicheDePaieService;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -40,6 +37,11 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     private final Logger log = LoggerFactory.getLogger(FicheDePaieServiceImpl.class);
 
     private final FicheDePaieRepository ficheDePaieRepository;
+
+
+    public FicheDePaieServiceImpl(FicheDePaieRepository ficheDePaieRepository) {
+        this.ficheDePaieRepository = ficheDePaieRepository;
+
     private final TauxDImpositionRepository tauxDImpositionRepository;
     private final ContratRepository contratRepository;
     private final CongeRepository congeRepository;
@@ -61,11 +63,13 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         this.congeRepository = congeRepository;
         this.cotisationRepository = cotisationRepository;
         this.heureSupRepository = heureSupRepository;
+
     }
 
     @Override
     public FicheDePaie save(FicheDePaie ficheDePaie) {
         log.debug("Request to save FicheDePaie : {}", ficheDePaie);
+
         ficheDePaie.setSalaireBrut(
             getSalaireBase(ficheDePaie.getContrat().getEmployee()) +
             calculConge(ficheDePaie) +
@@ -145,6 +149,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         log.debug("Request to delete FicheDePaie : {}", id);
         ficheDePaieRepository.deleteById(id);
     }
+
 
     public TauxDImposition getTauxImposition(Float salaireNet) {
         List<TauxDImposition> listeTaux = tauxDImpositionRepository.findAll();
@@ -315,4 +320,5 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         salaire_net = salaire_net - imposition.calculs_imposition(imposition, salaire_net);
         return (salaire_net);
     }
+
 }

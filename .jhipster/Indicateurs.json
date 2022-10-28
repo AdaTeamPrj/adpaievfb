@@ -1,0 +1,14 @@
+{
+  "changelogDate": "20221028114044",
+  "fields": [
+    {
+      "fieldName": "gestiondepaie",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Indicateurs",
+  "pagination": "no",
+  "readOnly": true,
+  "relationships": [],
+  "service": "no"
+}

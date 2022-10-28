@@ -1,0 +1,16 @@
+{
+  "adpaievfbApp": {
+    "indicateurs": {
+      "home": {
+        "title": "Indicateurs",
+        "refreshListLabel": "Actualiser la liste",
+        "notFound": "Aucun Indicateurs trouvé"
+      },
+      "detail": {
+        "title": "Indicateurs"
+      },
+      "id": "ID",
+      "gestiondepaie": "Gestiondepaie"
+    }
+  }
+}
