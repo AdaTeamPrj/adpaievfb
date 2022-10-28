@@ -61,14 +61,13 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     @Override
     public FicheDePaie save(FicheDePaie ficheDePaie) {
         log.debug("Request to save FicheDePaie : {}", ficheDePaie);
-        ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
-        ficheDePaie.setSalaireBrut(getSalaireBase(ficheDePaie.getContrat().getEmployee()) + calculConge(ficheDePaie)); //modifier set to salaire brut quan on aura la fonction
+        ficheDePaie.setSalaireBrut(
+            getSalaireBase(ficheDePaie.getContrat().getEmployee()) + calculConge(ficheDePaie) - deductionConge(ficheDePaie)
+        ); //modifier set to salaire brut quan on aura la fonction
         ficheDePaie.setMontantNetAvantImpots(getMontantNetAvantImpots(ficheDePaie.getSalaireBrut()));
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
         ficheDePaie.setEmployeur(ficheDePaie.getContrat().getEmployeur());
-        Employee employee = ficheDePaie.getContrat().getEmployee();
         //float salaire_net = getSalaireBase(employee);
-        ficheDePaie.setSalaireBrut(getSalaireBase(employee) + calculConge(ficheDePaie));
         return ficheDePaieRepository.save(ficheDePaie);
     }
 
@@ -223,7 +222,6 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         TypeJourTravail typeJourTravail = ficheDePaie.getContrat().getTypeJourTravail();
         float nb_days = getnbDaysConge(ficheDePaie, employee, TypeConge.CongePaye);
         nb_days += getnbDaysConge(ficheDePaie, employee, TypeConge.RTT);
-        ficheDePaie.setDeductions(nb_days);
         ficheDePaie.setProFees(salaireBase);
         float conge_pay = 0f;
 
@@ -240,7 +238,30 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         }
     }
 
-    public Float calculSalaireNet(FicheDePaie ficheDePaie) {
+    public float deductionConge(FicheDePaie ficheDePaie) {
+        Employee employee = ficheDePaie.getContrat().getEmployee();
+        float salaireBase = getSalaireBase(employee);
+        TypeJourTravail typeJourTravail = ficheDePaie.getContrat().getTypeJourTravail();
+        float nb_days = getnbDaysConge(ficheDePaie, employee, TypeConge.CongePaye);
+        nb_days += getnbDaysConge(ficheDePaie, employee, TypeConge.RTT);
+        nb_days += getnbDaysConge(ficheDePaie, employee, TypeConge.CongeSansSolde);
+        ficheDePaie.setProFees(salaireBase);
+        float conge_deduc = 0f;
+
+        if (typeJourTravail == TypeJourTravail.Ouvre) {
+            conge_deduc = (salaireBase * nb_days) / 22;
+            return (conge_deduc);
+        }
+
+        if (typeJourTravail == TypeJourTravail.Ouvrable) {
+            conge_deduc = (salaireBase * nb_days) / 26;
+            return (conge_deduc);
+        } else {
+            return (conge_deduc);
+        }
+    }
+
+    public float calculSalaireNet(FicheDePaie ficheDePaie) {
         Employee employee = ficheDePaie.getContrat().getEmployee();
 
         float salaire_net = ficheDePaie.getMontantNetAvantImpots();
