@@ -6,6 +6,7 @@ import com.adateam.adpaievfb.domain.Cotisation;
 import com.adateam.adpaievfb.domain.Employee;
 import com.adateam.adpaievfb.domain.FicheDePaie;
 import com.adateam.adpaievfb.domain.HeureSup;
+import com.adateam.adpaievfb.domain.HeureSup;
 import com.adateam.adpaievfb.domain.TauxDImposition;
 import com.adateam.adpaievfb.domain.enumeration.Decision;
 import com.adateam.adpaievfb.domain.enumeration.TypeConge;
@@ -14,6 +15,7 @@ import com.adateam.adpaievfb.repository.CongeRepository;
 import com.adateam.adpaievfb.repository.ContratRepository;
 import com.adateam.adpaievfb.repository.CotisationRepository;
 import com.adateam.adpaievfb.repository.FicheDePaieRepository;
+import com.adateam.adpaievfb.repository.HeureSupRepository;
 import com.adateam.adpaievfb.repository.HeureSupRepository;
 import com.adateam.adpaievfb.repository.TauxDImpositionRepository;
 import com.adateam.adpaievfb.service.FicheDePaieService;
@@ -41,6 +43,7 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
     private final TauxDImpositionRepository tauxDImpositionRepository;
     private final ContratRepository contratRepository;
     private final CongeRepository congeRepository;
+    private final HeureSupRepository heureSupRepository;
 
     private final CotisationRepository cotisationRepository;
 
@@ -49,20 +52,25 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
         TauxDImpositionRepository tauxDImpositionRepository,
         ContratRepository contratRepository,
         CongeRepository congeRepository,
-        CotisationRepository cotisationRepository
+        CotisationRepository cotisationRepository,
+        HeureSupRepository heureSupRepository
     ) {
         this.ficheDePaieRepository = ficheDePaieRepository;
         this.tauxDImpositionRepository = tauxDImpositionRepository;
         this.contratRepository = contratRepository;
         this.congeRepository = congeRepository;
         this.cotisationRepository = cotisationRepository;
+        this.heureSupRepository = heureSupRepository;
     }
 
     @Override
     public FicheDePaie save(FicheDePaie ficheDePaie) {
         log.debug("Request to save FicheDePaie : {}", ficheDePaie);
         ficheDePaie.setSalaireBrut(
-            getSalaireBase(ficheDePaie.getContrat().getEmployee()) + calculConge(ficheDePaie) - deductionConge(ficheDePaie)
+            getSalaireBase(ficheDePaie.getContrat().getEmployee()) +
+            calculConge(ficheDePaie) +
+            getHeureSup(ficheDePaie) -
+            calculConge(ficheDePaie)
         ); //modifier set to salaire brut quan on aura la fonction
         ficheDePaie.setMontantNetAvantImpots(getMontantNetAvantImpots(ficheDePaie.getSalaireBrut()));
         ficheDePaie.setSalaireNet(calculSalaireNet(ficheDePaie));
@@ -167,6 +175,35 @@ public class FicheDePaieServiceImpl implements FicheDePaieService {
             i++;
         }
         return res;
+    }
+
+    public float getHeureSup(FicheDePaie ficheDePaie) {
+        //les HS sont calculées mensuellement
+        List<HeureSup> listeHeureSup = heureSupRepository.findAll();
+        int i = 0;
+        float montantHeureSup = 0f;
+        Employee employee = ficheDePaie.getContrat().getEmployee();
+        float nbHeure = 0f;
+        while (i < listeHeureSup.size()) {
+            Boolean testdate =
+                (listeHeureSup.get(i).getDate().compareTo(ficheDePaie.getEndDate()) <= 0) &&
+                (listeHeureSup.get(i).getDate().compareTo(ficheDePaie.getStartDate()) >= 0);
+
+            if (listeHeureSup.get(i).getEmployee().getId() == employee.getId() && testdate) {
+                nbHeure = nbHeure + listeHeureSup.get(i).getNbHeure();
+            }
+            i++;
+        }
+
+        float salaireBase = getSalaireBase(employee);
+        if (nbHeure <= 30) {
+            montantHeureSup = nbHeure * ((salaireBase / 151.67f) * 1.25f);
+            return (montantHeureSup);
+        } else {
+            montantHeureSup = 30 * ((salaireBase / 151.67f) * 1.25f);
+            montantHeureSup += (nbHeure - 30) * ((salaireBase / 151.67f) * 1.50f);
+            return (montantHeureSup);
+        }
     }
 
     public float getMontantNetAvantImpots(Float salaireBrut) {
