@@ -24,21 +24,25 @@ class Footer extends React.Component {
                 <h4>Liens</h4>
                 <ul className="footer-link">
                   <li>
-                    <a href="#" title="Accueil">
-                      Accueil
+
                       <br />
+                      <div className="item">Accueil</div>
                     </a>
                     <a href="/fiche-de-paie" title="Fiche de paie">
-                      Gestion fiches de paie
-                      <br />
+                      <div className="item">Gestion de paie</div>
                     </a>
-                    <a href="/base-taux-cotisation" title="Fiche de paie">
-                      Déclarations sociales
-                      <br />
+
+                    <a href="/base-taux-cotisation" title="Déclaration sociales">
+                      <div className="item">Declarations sociales</div>
                     </a>
-                    <a href="/contrat" title="Fiche de paie">
-                      Gestion des embauches
-                      <br />
+                    <a href="/contrat" title="Embauches">
+                      <div className="item">Gestion embauches</div>
+                    </a>
+                    <a href="/conge" title="Congés">
+                      <div className="item">Gestion des congés</div>
+                    </a>
+                    <a href="#" title="Tableaux de bord">
+                      <div className="item">Tableaux de bord</div>
                     </a>
                   </li>
                 </ul>
@@ -77,7 +81,7 @@ class Footer extends React.Component {
           </div>
           <div className="bottom-footer">
             <div className="row">
-              <div className="col-md-5">
+              <div className="col-md-4">
                 <p className="copyright pt-3">Copyright &copy; 2022 ADPaie by Adateam</p>
               </div>
             </div>
